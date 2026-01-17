@@ -1,0 +1,120 @@
+Desafio — CRUD de Usuários no Console em Java
+Objetivo
+Desenvolver uma aplicação em Java que faça o gerenciamento de usuários pelo console, utilizando:
+
+Programação Orientada a Objetos
+ArrayList para armazenamento em memória
+Validação básica
+Tratamento de exceções
+Menu em loop até o usuário escolher sair
+1. Estrutura de classes
+O projeto deve conter, no mínimo, as seguintes classes:
+
+Classe Usuario (modelo de dados)
+Atributos:
+id (inteiro)
+nome (texto)
+email (texto)
+Responsabilidades:
+Representar um usuário do sistema.
+Conter métodos de acesso (getters e setters).
+Ter ao menos um construtor que receba os dados principais.
+Classe de gerenciamento de usuários Sugestão de nome: UsuarioService ou UsuarioRepository.
+Atributos:
+Uma lista interna para armazenar os usuários em memória, usando ArrayList<Usuario>.
+Um contador de ID para gerar IDs sequenciais (ex.: iniciar em 1 e ir incrementando).
+Métodos obrigatórios:
+cadastrarUsuario(nome, email)
+Cria um novo usuário, gera o ID automaticamente e adiciona na lista.
+listarUsuarios()
+Retorna ou exibe todos os usuários cadastrados.
+buscarPorId(id)
+Localiza um usuário específico dentro da lista pelo ID.
+atualizarUsuario(id, novoNome, novoEmail)
+Localiza o usuário pelo ID e atualiza os dados.
+removerUsuario(id)
+Remove o usuário da lista com base no ID.
+Responsabilidades:
+Centralizar todas as operações de CRUD sobre a lista.
+Não deve conter lógica de leitura direta do console (isso fica na classe principal).
+Classe principal Main
+Responsabilidades:
+Exibir o menu de opções no console.
+Ler as entradas do usuário (opção do menu, dados de cadastro, ID, etc.).
+Chamar os métodos da classe de gerenciamento (UsuarioService / UsuarioRepository).
+Manter um loop que só termina quando o usuário escolher sair.
+2. Funcionalidades do sistema
+O menu principal deve oferecer, no mínimo, as seguintes opções:
+
+Cadastrar usuário
+Solicitar nome e email pelo console.
+Chamar o método de cadastro na classe de gerenciamento.
+Exibir mensagem de sucesso ou erro.
+Listar usuários
+Chamar o método de listagem.
+Exibir cada usuário em uma linha ou formato organizado (mostrar ID, nome e email).
+Atualizar usuário
+Solicitar o ID do usuário a ser atualizado.
+Verificar se o usuário existe (utilizando o método buscarPorId).
+Se existir:
+Solicitar novo nome e novo email.
+Chamar o método de atualização.
+Exibir mensagem de sucesso.
+Se não existir:
+Exibir mensagem informando que o ID não foi encontrado.
+Excluir usuário
+Solicitar o ID do usuário.
+Chamar o método de remoção.
+Exibir mensagem informando se a remoção foi realizada ou se o ID não existe.
+Sair
+Encerrar o loop do menu e finalizar a aplicação.
+O menu deve ser exibido repetidamente até que o usuário escolha a opção de sair.
+
+3. Regras de validação
+Implementar validações mínimas:
+
+Nome
+Não pode ser vazio ou composto apenas de espaços.
+Em caso de nome inválido, exibir mensagem e não concluir o cadastro/atualização.
+Email
+Deve conter pelo menos o caractere @.
+Não pode ser vazio.
+Em caso de email inválido, exibir mensagem e não concluir o cadastro/atualização.
+ID
+Ao receber um ID informado pelo usuário, verificar se existe usuário com aquele ID antes de atualizar ou remover.
+Se não existir, exibir mensagem adequada.
+As validações podem ser feitas na classe de gerenciamento ou em métodos auxiliares específicos.
+
+4. Tratamento de exceções
+O programa deve tratar situações como:
+
+Entrada de opção inválida no menu
+Quando o usuário digitar algo que não seja um número ou fora das opções.
+Exibir uma mensagem informando que a opção é inválida e mostrar o menu novamente.
+Entrada de dados numéricos quando se espera um número
+Ex.: quando for solicitado um ID (inteiro) e o usuário digitar texto.
+Tratar a exceção, exibir mensagem clara e pedir novamente o valor.
+Qualquer erro inesperado
+Tratar erros gerais, garantindo que o programa não quebre de forma abrupta.
+Exibir mensagem genérica de erro e continuar a execução, quando possível.
+5. Fluxo geral sugerido
+Na Main, criar uma instância da classe de gerenciamento de usuários.
+Iniciar um loop (por exemplo, while), que:
+Mostra o menu de opções.
+Lê a opção escolhida.
+Usa uma estrutura de decisão (por exemplo, switch ou if/else) para:
+Chamar o método adequado na classe de gerenciamento.
+Tratar entradas inválidas.
+Após executar a ação escolhida, retornar ao menu até que a opção de sair seja selecionada.
+6. Entrega esperada
+Projeto em Java com as classes organizadas.
+
+Código legível e organizado, com:
+Comentários apenas quando necessário.
+
+Nomes de classes e métodos autoexplicativos.
+
+README (opcional, mas desejável) explicando:
+Como compilar e executar.
+Descrição breve das funcionalidades.
+Bons estudos!
